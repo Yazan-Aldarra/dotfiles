@@ -17,21 +17,40 @@
 
 #HotIf
 
-#HotIf WinActive("ahk_exe Microsoft.CmdPal.UI.exe")
+#HotIf WinActive("ahk_exe Microsoft.CmdPal.UI.exe") || WinActive("ahk_exe draw.io.exe") || WinActive("ahk_exe POWERPNT.EXE")
 
 !j:: Send "{Down}"
 !k:: Send "{Up}"
 !l:: Send "{Right}"
 !h:: Send "{Left}"
+
+^n:: Send "{Down}"
+^p:: Send "{Up}"
+
+^w:: Send("^{Backspace}")
+^a:: Send("^{Home}")
+^e:: Send("^{End}")
+^b:: Send("^{Left}")
+^h:: Send("{BackSpace}")
+^f:: Send("^{Right}")
+^u:: Send("^+{Home}{Delete}")
+
+!^a:: Send("^a")
+
+!u:: Send("^z")
+!r:: Send("^+z")
 
 #HotIf
 
 #HotIf WinActive("ahk_exe chrome.exe")
 
-!h:: Send "{Left}"
 !j:: Send "{Down}"
 !k:: Send "{Up}"
 !l:: Send "{Right}"
+!h:: Send "{Left}"
+
+^n:: Send "{Down}"
+^p:: Send "{Up}"
 
 !+h:: Send "^{Home}"
 !+j:: Send "^{PgUp}"
@@ -47,6 +66,26 @@
 !7:: Send("^7")
 !8:: Send("^8")
 !9:: Send("^9")
+
+; map the ctrl compenation in insert mode of vim to override chrome default ctrl shorcuts
+^w:: Send("^{Backspace}")
+^a:: Send("^{Home}")
+^e:: Send("^{End}")
+^b:: Send("^{Left}")
+^h:: Send("{BackSpace}")
+
+; remap the default chrome shorcut that have conlifct with other costum remaps to start with ^!<key(s)>
+^!h:: Send("^h")
+
+!w:: Send("^w")
+!t:: Send("^t")
+!p:: Send("^p")
++!p:: Send("^+p")
+!n:: Send("^n")
++!n:: Send("^+n")
+^!j:: Send("^j")
+
+^u:: Send("^+{Home}{Delete}")
 
 #HotIf
 

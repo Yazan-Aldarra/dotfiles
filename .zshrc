@@ -37,9 +37,12 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 bindkey '^y' autosuggest-accept
-bindkey -M viins '^w' backward-kill-word
 bindkey -M viins '^h' backward-delete-char 
 bindkey -M viins '' backward-delete-char 
+
+# Bind Ctrl+W in Vim insert mode
+# Delete backwards until the previous whitespace
+bindkey -M viins '^W' vi-backward-kill-word
 
 # ===== HISTORY =====
 HISTSIZE=5000
@@ -64,21 +67,22 @@ eval "$(fzf --zsh --bind 'ctrl-y:accept')"
 eval "$(zoxide init --cmd cd zsh)"
 
 # ===== ENVIRONMENT VARIABLES =====
-export brc=~/.zshrc
+export BRC=~/.zshrc
 export NVIM_HOME="$HOME/AppData/Local/nvim"
-export nvim_conf="$HOME/AppData/Local/nvim"
-export glaze_conf="$HOME/.glzr/glazewm"
-export ahk_conf="$HOME/.ahk/"
-export ap="/c/school/ap-j2/"
-export school="/c/school/"
-export term_conf="$HOME/.wezterm.lua"
+export NVIM_CONF="$HOME/AppData/Local/nvim"
+export GLAZE_CONF="$HOME/.glzr/glazewm"
+export AHK_CONF="$HOME/.ahk/"
+export AP="/c/school/ap-j2/"
+export SCHOOL="/c/school/"
+export TERM_CONF="$HOME/.wezterm.lua"
 export EDITOR='vim'
 
 # ===== CUSTOM ALIASES =====
 alias school="ssh student@10.158.10.6"
 alias sofproj="ssh student@195.201.32.128"
 alias privvm="ssh yazan@138.199.212.73"
-alias ap="cd /c/school/ap-j2/"
+alias ap="cd /c/school/ap-j3/"
+alias ap2="cd /c/school/ap-j2/"
 alias proj="cd /c/school/ap-j2/software_project/gosmartlib"
 
 # ===== FUNCTIONS (keep all your existing functions) =====
@@ -228,4 +232,9 @@ setpower() {
     powercfg /setactiveoverlay SCHEME_CURRENT
   }"
 }
+
+
+# Intresting commands
+# This takes the last 10 files/directories and give them the user, the user then can select 1 or multiple files/dir (via <Tab>) and then move them to `tmp`
+# mv $(fd . ~/Downloads  -a -x stat -c "%Y;%y;%n" | sort -nr | head | cut -d";" -f 3 | fzf -m) tmp
 

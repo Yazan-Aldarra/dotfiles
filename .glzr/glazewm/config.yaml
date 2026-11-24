@@ -49,7 +49,7 @@ gaps:
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: "0"
+    top: "40"
     right: "0"
     bottom: "0"
     left: "0"
@@ -156,7 +156,7 @@ window_rules:
         window_class: { not_regex: "OpusApp" }
       - window_process: { equals: "POWERPNT" }
         window_class: { not_regex: "PPTFrameClass" }
-      - window_process: { regex : ".*Unity.*" }
+      - window_process: { regex: ".*Unity.*" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.

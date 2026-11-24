@@ -3,7 +3,7 @@
 ~LWin:: Send("{Blind}{vkE8}")
 ~RWin:: Send("{Blind}{vkE8}")
 ~RAlt:: Send("{Blind}{vkE8}")
-
+CapsLock:: Send("{Escape}")
 ; ==============================
 ; NOTE: BLOCK WINDOWS KEY COMBOS
 

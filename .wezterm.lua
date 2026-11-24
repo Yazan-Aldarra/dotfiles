@@ -17,7 +17,7 @@ config.font = wezterm.font("Consolas")
 
 config.cell_width = 1
 
-local transparent_opacity = 0.95
+local transparent_opacity = 1
 config.window_background_opacity = transparent_opacity
 config.prefer_egl = true
 config.font_size = 18
@@ -185,10 +185,12 @@ local onedark_theme = {
 	},
 }
 
-config.color_schemes = {
-	["One Dark (Black)"] = onedark_theme,
-}
-config.color_scheme = "One Dark (Black)"
+-- config.color_schemes = {
+-- 	["One Dark (Black)"] = onedark_theme,
+-- }
+-- config.color_scheme = "One Dark (Black)"
+
+config.color_scheme = "Catppuccin Mocha"
 
 -- Update window frame to match
 config.window_frame = {
@@ -197,53 +199,53 @@ config.window_frame = {
 }
 
 -- Full colors table for modal.wezterm plugin
-config.colors = {
-	-- ANSI colors
-	ansi = {
-		"#000000",
-		"#e06c75",
-		"#98c379",
-		"#e5c07b",
-		"#61afef",
-		"#c678dd",
-		"#56b6c2",
-		"#abb2bf",
-	},
-	brights = {
-		"#4a4a4a",
-		"#ff7b85",
-		"#a8e38b",
-		"#ffd37b",
-		"#7bbfff",
-		"#da8aee",
-		"#6cc6d2",
-		"#ffffff",
-	},
-	-- Named UI colors (required by plugin)
-	foreground = "#abb2bf",
-	background = "#000000",
-	cursor_bg = "#e767f1",
-	cursor_border = "#ed586e",
-	cursor_fg = "#000000",
-	selection_bg = "#3e4451",
-	selection_fg = "#abb2bf",
-	-- Tab bar colors
-	tab_bar = {
-		background = "#0a0a0a",
-		active_tab = {
-			bg_color = "#000000",
-			fg_color = "#abb2bf",
-		},
-		inactive_tab = {
-			bg_color = "#0a0a0a",
-			fg_color = "#5c6370",
-		},
-		inactive_tab_hover = {
-			bg_color = "#1a1a1a",
-			fg_color = "#abb2bf",
-		},
-	},
-}
+-- config.colors = {
+-- 	-- ANSI colors
+-- 	ansi = {
+-- 		"#000000",
+-- 		"#e06c75",
+-- 		"#98c379",
+-- 		"#e5c07b",
+-- 		"#61afef",
+-- 		"#c678dd",
+-- 		"#56b6c2",
+-- 		"#abb2bf",
+-- 	},
+-- 	brights = {
+-- 		"#4a4a4a",
+-- 		"#ff7b85",
+-- 		"#a8e38b",
+-- 		"#ffd37b",
+-- 		"#7bbfff",
+-- 		"#da8aee",
+-- 		"#6cc6d2",
+-- 		"#ffffff",
+-- 	},
+-- 	-- Named UI colors (required by plugin)
+-- 	foreground = "#abb2bf",
+-- 	background = "#000000",
+-- 	cursor_bg = "#e767f1",
+-- 	cursor_border = "#ed586e",
+-- 	cursor_fg = "#000000",
+-- 	selection_bg = "#3e4451",
+-- 	selection_fg = "#abb2bf",
+-- 	-- Tab bar colors
+-- 	tab_bar = {
+-- 		background = "#0a0a0a",
+-- 		active_tab = {
+-- 			bg_color = "#000000",
+-- 			fg_color = "#abb2bf",
+-- 		},
+-- 		inactive_tab = {
+-- 			bg_color = "#0a0a0a",
+-- 			fg_color = "#5c6370",
+-- 		},
+-- 		inactive_tab_hover = {
+-- 			bg_color = "#1a1a1a",
+-- 			fg_color = "#abb2bf",
+-- 		},
+-- 	},
+-- }
 
 -- Plugins
 local modal = wezterm.plugin.require("https://github.com/MLFlexer/modal.wezterm")
@@ -284,21 +286,21 @@ config.window_frame = {
 	active_titlebar_bg = "none",
 	inactive_titlebar_bg = "none",
 }
-config.colors.tab_bar.background = "rgba(0,0,0,0)"
-config.colors.tab_bar.active_tab.bg_color = "rgba(0,0,0,0)"
-config.colors.tab_bar.active_tab.fg_color = "#c678dd"
-config.colors.tab_bar.inactive_tab.bg_color = "rgba(0,0,0,0)"
-
-config.colors.tab_bar.new_tab = {
-	bg_color = "rgba(0,0,0,0)",
-	fg_color = "rgba(0,0,0,0)",
-}
+-- config.colors.tab_bar.background = "rgba(0,0,0,0)"
+-- config.colors.tab_bar.active_tab.bg_color = "rgba(0,0,0,0)"
+-- config.colors.tab_bar.active_tab.fg_color = "#c678dd"
+-- config.colors.tab_bar.inactive_tab.bg_color = "rgba(0,0,0,0)"
+--
+-- config.colors.tab_bar.new_tab = {
+-- 	bg_color = "rgba(0,0,0,0)",
+-- 	fg_color = "rgba(0,0,0,0)",
+-- }
 
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({
 	options = {
 		icons_enabled = true,
-		theme = config.color_schemes["One Dark (Black)"],
+		-- theme = config.color_schemes["One Dark (Black)"],
 		tabs_enabled = true,
 		section_separators = {
 			left = wezterm.nerdfonts.pl_left_hard_divider,
